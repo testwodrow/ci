@@ -317,5 +317,5 @@ switch (ENVIRONMENT)
  * And away we go...
  */
 require_once 'vendor/autoload.php';
-require_once 'loader.php';
+require_once 'classes/loader.php';
 require_once BASEPATH.'/core/CodeIgniter.php';

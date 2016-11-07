@@ -1,4 +1,6 @@
 <?php
+use config\ParamLocal;
+
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 /*
@@ -74,13 +76,13 @@ $active_group = 'default';
 $query_builder = TRUE;
 
 $db['default'] = array(
-	'dsn'	=> '',
-	'hostname' => 'localhost',
-	'username' => '',
-	'password' => '',
-	'database' => '',
-	'dbdriver' => 'mysqli',
-	'dbprefix' => '',
+	'dsn'	=> ParamLocal::DB_DSN,
+	'hostname' => ParamLocal::DB_HOST,
+	'username' => ParamLocal::DB_USER,
+	'password' => ParamLocal::DB_PASSWORD,
+	'database' => ParamLocal::DB_NAME,
+	'dbdriver' => ParamLocal::DB_DRIVER,
+	'dbprefix' => ParamLocal::DB_PREFIX,
 	'pconnect' => FALSE,
 	'db_debug' => (ENVIRONMENT !== 'production'),
 	'cache_on' => FALSE,

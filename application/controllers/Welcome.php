@@ -20,6 +20,12 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('welcome_message');
+		$this->load->model('community_talk');
+		$this->load->database();
+		$x = $this->db->get('community_talk')->result();
+		$this->load->view('welcome_message', [
+			'test' => 'test',
+			'x' => $x,
+		]);
 	}
 }

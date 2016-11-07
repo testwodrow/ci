@@ -11,8 +11,30 @@ namespace tools;
 
 class Tools
 {
-    public static function test()
+    /**
+     * 对象转成数组
+     * @param array $d
+     * @return array
+     */
+    public static function object2array($d)
     {
-        echo 123456;
+        if (is_object($d)) $d = get_object_vars($d);
+        if (is_array($d))
+            return array_map('self::object2array', $d);
+        else
+            return $d;
+    }
+
+    /**
+     * 数组转成对象
+     * @param object $d
+     * @return object
+     */
+    public static function array2object($d)
+    {
+        if (is_array($d))
+            return (object) array_map('self::array2object', $d);
+        else
+            return $d;
     }
 }

@@ -40,5 +40,8 @@ phpunit.phar
 # log
 *.log
 
+# cache
+*~
+
 # custom
 application/cache

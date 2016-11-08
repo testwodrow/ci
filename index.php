@@ -319,3 +319,4 @@ switch (ENVIRONMENT)
 require_once 'vendor/autoload.php';
 require_once 'classes/loader.php';
 require_once BASEPATH.'/core/CodeIgniter.php';
+\tools\Tools::test();

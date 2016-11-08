@@ -9,8 +9,17 @@
 namespace tools;
 
 
+use core\CI;
+
 class Tools
 {
+    public static function test()
+    {
+        CI::$ci->load->database();
+        $x = CI::$ci->db->query("select * from `user` limit 0,10");
+        var_dump($x->result());
+    }
+
     /**
      * 对象转成数组
      * @param array $d
